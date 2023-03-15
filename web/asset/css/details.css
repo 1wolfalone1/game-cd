@@ -1,0 +1,392 @@
+:root {
+    --height: 655px;
+    --width-img-bottom: 100px;
+}
+
+.content {}
+
+.slider {
+    width: var(--height);
+    overflow: hidden;
+    flex-shrink: 0;
+
+}
+
+.img_repos {
+    height: var(--height);
+    width: var(--height);
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    position: relative;
+}
+
+
+.img_repos {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.img_repos img {
+    position: absolute;
+
+}
+
+.img img {
+    width: 100%;
+    transition: 0.2s ease-in;
+    border: 3px solid rgba(6, 1, 35, 0.792);
+    box-shadow: 15px 5px 5px rgba(0, 0, 0, 0.792);
+}
+
+
+
+.control_right,
+.control_left {
+    font-size: 70px;
+    color: rgb(66, 182, 184);
+    position: absolute;
+    z-index: 10;
+    font-weight: 10;
+    transform: translateY(-50%);
+    top: 50%;
+    /* From https://css.glass */
+    background: rgba(50, 109, 120, 0.23);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.8px);
+    -webkit-backdrop-filter: blur(3.8px);
+    border: 1px solid rgba(50, 109, 120, 0.33);
+}
+
+.control_right:hover,
+.control_left:hover {
+    color: rgb(161, 42, 165);
+    cursor: pointer;
+}
+
+.control_left {
+    left: 0;
+
+}
+
+.control_right {
+    right: 0;
+}
+
+
+.slider_bottom {
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.slider_bottom img {
+    width: var(--width-img-bottom);
+    background-color: rgba(250, 235, 215, 0.592);
+    filter: brightness(50%) contrast(80%);
+    transition: 0.3s ease-in-out;
+}
+
+.details_product {
+    margin: 30px auto;
+    width: 70%;
+    height: fit-content;
+    background-color: aliceblue;
+    /* From https://css.glass */
+    background: rgba(127, 127, 157, 0.13);
+    border-radius: 16px;
+    box-shadow: 3px 4px 10px rgba(26, 24, 24, 0.838);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    border: 1px solid rgba(127, 127, 157, 0.17);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.introduction {
+    flex: 1;
+    min-width: 300px;
+    color: rgb(147, 166, 60);
+    padding: 10px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction .title {
+    text-align: center;
+    font-size: 60px;
+    color: rgba(83, 244, 255, 0.661);
+    font-weight: 300;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.introduction .price {
+    font-weight: 500;
+    display: flex;
+    padding: 15px 30px;
+    font-size: 40px;
+}
+
+.introduction .price span:nth-child(1) {
+    flex-basis: 50%;
+}
+
+.introduction .price span:nth-child(2) {
+    color: rgba(71, 245, 100, 0.792);
+    flex-basis: 50%;
+    font-family: monospace;
+
+}
+
+.introduction .status {
+    font-weight: 500;
+    display: flex;
+    padding: 15px 30px;
+    font-size: 40px;
+
+}
+
+.introduction .status span:nth-child(1) {
+    flex-basis: 50%;
+    font-weight: 1;
+}
+
+.introduction .status span:nth-child(2) {
+    color: rgba(64, 255, 71, 0.792);
+    font-family: monospace;
+
+    flex-basis: 50%;
+}
+
+.introduction .quantity {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.introduction .type {
+    display: flex;
+    padding: 15px 30px;
+    font-size: 40px;
+    font-weight: 500;
+
+}
+
+.introduction .type span {
+    margin: auto 0;
+
+}
+
+.list_type {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    font-size: 30px;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+}
+
+.list_type span {
+    font-family: monospace;
+    color: rgba(250, 235, 215, 0.592);
+    padding: 5px;
+    /* From https://css.glass */
+    background: rgba(78, 120, 50, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+    border: 1px solid rgba(78, 120, 50, 0.59);
+    margin: 5px;
+}
+
+.introduction .quantity h4 {
+    font-weight: 100;
+    padding: 15px 30px;
+    font-size: 40px;
+}
+
+.introduction .quantity span {
+    padding: 10px;
+    color: rgb(88, 124, 143);
+    font-size: 20px;
+}
+
+.introduction .quantity button {
+    height: 35px;
+    width: 35px;
+    background-color: rgba(240, 248, 255, 0.154);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 3px 1px rgb(14, 3, 3);
+    color: gold;
+    transition: 0.2s linear;
+}
+
+.introduction .quantity button:hover {
+    cursor: pointer;
+}
+
+.introduction .quantity button:active {
+    background-color: rgb(90, 17, 104);
+    box-shadow: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input_quantities{
+    text-align: center;
+}
+.introduction .quantity input {
+    padding: 2px 3px;
+    height: 35px;
+    width: 70px;
+    border: none;
+    background-color: rgb(104, 71, 107);
+    border-radius: 3px;
+    box-shadow: 5px 10px 10px rgb(65, 49, 49);
+    transition: 0.2s linear;
+    height: 35px;
+    width: 70px;
+    border: none;
+    background-color: rgb(46, 77, 72);
+    border-radius: 3px;
+    box-shadow: 5px 10px 10px rgb(65, 49, 49);
+    margin: 0 3px;
+    color: gold;
+    font-size: 20px;
+    outline: none;
+}
+
+.details {
+    color: rgb(64, 193, 195);
+    font-size: 20px;
+    text-align: justify;
+    padding: 30px 55px;
+    line-height: 35px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.details p {
+    margin-bottom: 15px;
+}
+
+.details h2 {
+    color: rgb(168, 216, 96);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.details::after {
+    content: "";
+    margin: 15px;
+    position: absolute;
+    top: 0;
+    background-color: rgb(114, 80, 34);
+    left: 100px;
+    right: 100px;
+    height: 3px;
+}
+
+.control {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+    margin-bottom: var(--width-img-bottom);
+}
+
+.control button {
+    font-size: large;
+}
+
+.slider_bottom img:hover {
+    cursor: pointer;
+    filter: brightness(70%) contrast(90%) !important;
+}
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #1e1b20;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0e0326;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.unavailability{
+    color: rgb(12, 169, 112) !important;
+}

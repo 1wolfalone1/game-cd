@@ -1,0 +1,431 @@
+:root {
+    --margin: 25px;
+    --margin-top: 35px;
+    --height_header: 140px;
+    --type-height: 30px;
+}
+
+.market {
+    background-color: rgba(43, 4, 57, 0.514) !important;
+    color: rgb(97, 206, 97) !important;
+    cursor: default !important;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+}
+
+.img_not_foundP{
+    width: 100%;
+    height: fit-content;
+}
+
+.content_not_found {
+    flex: 1;
+   text-align:  center;
+}
+.title_not_found_item{
+    margin-top: 10px;
+    color: #68e971;
+}
+.content_product {
+    margin-top: var(--margin-top);
+    flex-basis: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: var(--margin);
+    --column: 4;
+
+}
+
+@media screen and (max-width: 1023px) {
+    .content_product {
+        --column: 2;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .content_product {
+        --column: 1;
+    }
+}
+
+.content_product-item {
+    margin-bottom: 30px;
+    /* glass box */
+    /* From https://css.glass */
+    /* From https://css.glass */
+    background: rgba(86, 140, 157, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(86, 140, 157, 0.3);
+    /* /glass box */
+    margin-left: var(--margin);
+    width: calc(calc(100% / var(--column)) - var(--margin));
+    transition: 0.3s linear;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content_product-item:hover {
+    border: 0;
+    box-shadow: 10px 15px 10px rgba(6, 1, 31, 0.638);
+}
+
+.product-item-img {
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.product-item-img img {
+    width: 100%;
+}
+
+
+.product-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item-title {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(124, 131, 206);
+    position: relative;
+    padding: 10px 10px 10px;
+    flex-shrink: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+
+.product-item-status {
+    padding: 9px 0 0 5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.type_container {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(57, 189, 178);
+    margin-bottom: 3px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+}
+
+.type_container span {
+    padding: 4px;
+    /* From https://css.glass */
+    background: rgba(105, 125, 137, 0.2);
+    border-radius: 16px;
+    box-shadow: 3px 4px 3px rgba(22, 19, 19, 0.992);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+    border: 1px solid rgba(105, 125, 137, 0.59);
+}
+
+.product-item-status::after {
+    content: "";
+    height: 3px;
+    background-color: rgb(96, 141, 141);
+    position: absolute;
+    top: 0;
+    left: 10px;
+    box-shadow: 3px 5px 1px rgba(9, 8, 14, 0.638);
+    right: 10px;
+}
+
+.product-item-price {
+    font-size: 25px;
+    color: rgb(81, 255, 0);
+    padding: 5px;
+    box-shadow: 0 5px 0 rgba(9, 8, 14, 0.638);
+    background-color: rgb(152, 47, 47);
+    position: relative;
+}
+
+.product-item-price::before {
+    box-shadow: 0 5px 0 rgba(9, 8, 14, 0.638);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+    background-color: rgb(152, 47, 47);
+    transform: translateX(-100%);
+
+}
+
+.product-item-price::after {
+    content: "";
+    position: absolute;
+
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-left: 20px solid rgb(152, 47, 47);
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    transform: translateX(100%);
+    z-index: 100;
+}
+
+.product-item-avaible {
+    box-shadow: 0 5px 0 rgba(9, 8, 14, 0.638);
+    font-size: 25px;
+    color: rgb(183, 229, 114);
+    background-color: rgb(152, 47, 47);
+    padding: 5px 5px 5px 15px;
+    justify-self: end;
+    position: relative;
+    z-index: 10000;
+}
+
+.product-item-avaible::after {
+    box-shadow: 0 5px 0 rgba(9, 8, 14, 0.638);
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-left: 20px solid transparent;
+    border-top: 20px solid rgb(152, 47, 47);
+    border-bottom: 20px solid rgb(152, 47, 47);
+    transform: translateX(-100%);
+}
+
+.product-item-avaible::before {
+    box-shadow: 0 5px 0 rgba(9, 8, 14, 0.638);
+
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: rgb(152, 47, 47);
+    transform: translateX(100%);
+
+}
+
+
+
+.product-item-control {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.product-item-control button {
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #68e971;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1c011f;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+
+.content_slider {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px
+}
+
+.slider_ {
+    width: 100px;
+    font-size: 20px;
+    color: rgb(81, 255, 0);
+    /* From https://css.glass */
+    background: rgba(200, 190, 223, 0.07);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 1px solid rgba(200, 190, 223, 0.42);
+    margin: 0 3px;
+    transition: 0.3s linear;
+}
+
+.slider_:hover {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.445);
+    cursor: pointer;
+}
+
+.custom-select {
+    position: absolute;
+    font-family: Arial;
+    left: -220px;
+    border-radius: 5px;
+}
+
+.custom-select select {
+    display: none;
+    /*hide original SELECT element: */
+}
+
+.select-selected {
+    /* From https://css.glass */
+    background: rgba(57, 117, 131, 0.19);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(10.6px);
+    text-align: center;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    color: #d0fdb5;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+    text-align: center;
+    border-radius: 5px !important;
+    position: absolute;
+    /* From https://css.glass */
+    background: rgba(63, 28, 58, 0.826);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px) !important;
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(136, 144, 178, 0.06);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    color: rgb(63, 26, 65) !important;
+
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.unavailability{
+    color: rgb(12, 169, 112) !important;
+}

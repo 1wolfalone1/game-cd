@@ -1,0 +1,121 @@
+
+
+
+
+
+/* ----table------ */
+.table_header{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 4fr 2fr 1fr 1fr 1fr;
+    text-align: center;
+    color: rgb(106, 209, 238);
+    position: relative;
+
+}
+.table_header::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color:rgb(89, 158, 177);
+}
+.table_content form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 4fr 2fr 1fr 1fr 1fr;
+    margin: 30px 0;
+    text-align: center;
+    position: relative;
+
+
+}
+.table_content select{
+    background-color: rgba(30, 51, 67, 0.832);
+    color:rgb(181, 247, 127);
+    font-size: 20px;
+}
+.table_content form>div>span{
+    color:rgb(108, 189, 90);
+    font-size: 25px;
+}
+.table_content form>div::after{
+    content:"";
+    position: absolute;
+    width: 1px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: antiquewhite;
+
+}
+.table_content form>div:last-child:after{
+    content:"";
+    position: absolute;
+    width: 1px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(250, 235, 215, 0);
+
+}
+.table_content form>div{
+    position: relative;
+    
+}
+.table_content form::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color:rgb(89, 158, 177);
+}
+
+
+.table_content input{
+    border: 1px solid rgb(51, 153, 105);
+    margin: 0 5px;
+    width: 90%;
+    text-align: center;
+}
+.table_content button{
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+.custom-select {
+    width: 100% !important;
+    padding: 0 10px;
+}
+/* ----table------ */
+
+
+.top_search_date{
+    position: relative;
+}
+
+.bot_search_date {
+    position: relative;
+}
+
+.top_search_date::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    background-color: rgb(74, 74, 42);
+    height: 2px;
+}
+
+.bot_search_date::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    background-color: rgb(135, 135, 80);
+    height: 2px;
+}

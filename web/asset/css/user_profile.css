@@ -1,0 +1,331 @@
+
+
+body {
+    box-sizing: border-box;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-clip: border-box;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url(/GameCD/asset/img/2.png)  !important;
+    background-repeat: no-repeat;
+    filter: blur(2px) brightness(65%) contrast(80%);
+}
+.updateavatar {
+    height: 30px !important;
+    width: 60px !important;
+}
+.profile_user {
+    display: flex;
+    margin: 100px auto;
+    width: 60%;
+    padding: 20px 0;
+    /* From https://css.glass */
+    background: rgba(21, 7, 23, 0.615);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border: 1px solid rgba(0, 28, 14, 0.2);
+    color:rgb(162, 188, 186);
+    font-family: Comic Sans, Comic Sans MS, cursive;
+    transition: 0.7s linear;
+}
+
+.left_info {
+    text-align: center;
+    flex-basis: 30%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.left_info img {
+    width: 100%;
+    border-radius: 50%;
+    padding: 30px;
+}
+.left_info::after{
+    content : "";
+    position: absolute;
+    right: -2px;
+    width: 2px;
+    top: 5px;
+    bottom: 5px;
+    background-color: rgb(115, 216, 216);
+    transition: 0.5s linear;
+}
+
+.change_profile {
+    color: rgb(181, 250, 52) !important;
+    font-size: 20px;
+    width: 200px !important;
+}
+
+.right_info {
+    flex: 1;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.right_info>span{
+    color: orange;
+    margin: 0 auto;
+}
+.right_title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.info_user {
+    display: flex;
+    font-size: 25px;
+    margin-bottom: 10px;
+    z-index: 100;
+    position: relative;
+    transition: 0.4s linear;
+    
+}
+.info_user span{
+    width: 35%;
+    flex-shrink: 0;
+}
+.info_user input{
+    flex: 1;
+    font-size: 20px;
+    padding: 5px 12px;
+    border: 1px solid transparent;
+    max-height: 100px;
+}
+.action_info {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+    transition: 0.3s linear;
+    overflow: hidden;
+    position:relative;
+    max-height: 0;
+}
+
+input:-webkit-autofill,
+.on_input {
+    border: #17453d solid 1px !important;
+    border-radius: 10px;
+    box-shadow: 3px 4px 2px #092823;
+    position: relative;
+}
+
+.on_input:focus {
+    border: #59912c solid 1px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 2px #0f3d36;
+}
+
+.save_action,
+.cancel_antion {
+    margin: 10px 10px;
+    width: 70px !important;
+    height: 35px !important;
+    color:rgb(22, 250, 250) !important;
+}
+
+
+.password_change{
+    max-height: 0;
+    overflow: hidden;
+}
+
+.custom-file-upload {
+    margin: 0 auto 30px;
+    border: 1px solid #18131300;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.4s;
+}
+.custom-file-upload input{
+    width: fit-content;
+    color: blanchedalmond; 
+    
+}
+input {
+    border-style: none;
+    background: transparent;
+    outline: none;
+    color: greenyellow;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #1e1b20;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0e0326;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+.invalid {
+    color: red;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #624545;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(75, 28, 89);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #6a9dd7;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.toggle_status {
+    background-color: #2c3a4587;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 250px;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid rgb(223, 170, 105);
+}
+
+.toggle_status>span {
+    margin: auto 0;
+    padding: 0 10px;
+    font-size: 20px;
+    color: rgb(166, 164, 206);
+
+}

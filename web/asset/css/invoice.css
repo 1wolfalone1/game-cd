@@ -1,0 +1,456 @@
+progress {
+    border-radius: 7px;
+    height: 22px;
+    box-shadow: 1px 1px 4px rgba(30, 18, 18, 0.2);
+}
+
+progress::-webkit-progress-bar {
+    /* From https://css.glass */
+    background: rgba(10, 30, 33, 0.298);
+    border-radius: 7px;
+    box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.681);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border: 1px solid rgba(9, 13, 6, 0.278);
+}
+
+progress::-webkit-progress-value {
+    /* From https://css.glass */
+    background: rgba(13, 194, 109, 0.935);
+    border-radius: 7px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(126, 159, 102, 0.23);
+}
+
+progress::-moz-progress-bar {
+    /* style rules */
+}
+
+.content {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+.progress_order {
+    width: 70%;
+    font-size: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.progress_order div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: rgb(127, 249, 216);
+}
+
+.progress_order div span:first-child {
+    transform: translateX(-50%);
+}
+
+.progress_order div span:nth-child(3),
+.progress_order div span:nth-child(2) {
+    transform: translateX(50%);
+}
+
+.progress_order progress {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.order_content {
+    width: 60%;
+    margin: 30px auto;
+    /* From https://css.glass */
+    background: rgba(22, 41, 50, 0.392);
+    border-radius: 16px;
+    box-shadow: 7px 10px 10px rgba(29, 29, 23, 0.947);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(33, 67, 83, 0.46);
+}
+
+.user_information {
+    padding: 30px 20px;
+    font-size: 30px;
+    color: rgb(150, 153, 154);
+    width: 60%;
+}
+
+.user_information input {
+    font-size: 25px;
+    display: block;
+    font-weight: 1 !important;
+}
+
+.input_information::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 30%;
+    height: 1px;
+    background-color: #68bfb0;
+    transition: 0.3s ease-in-out;
+
+}
+
+.input_information {
+    display: flex;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.input_information:focus-within::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 30%;
+    height: 1px;
+    background-color: #c2ff47;
+}
+
+.input_information span {
+    flex-basis: 30%;
+    flex-shrink: 0;
+}
+
+.table_items {
+    padding: 25px 50px;
+}
+
+.table_header {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+
+}
+
+.table_header span {
+    font-size: 25px;
+    color: rgb(100, 211, 231);
+    font-weight: 600;
+    text-align: center;
+}
+
+.table_header span:first-child {
+    text-align: start;
+    padding-left: 15px;
+
+}
+
+.table_header::after {
+    content: "";
+    height: 2px;
+    background-color: rgb(148, 141, 92);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    box-shadow: 1px 2px 1px rgb(45, 13, 13);
+}
+
+.table_content {}
+
+.table_item {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 22px;
+    color: rgb(72, 223, 52);
+}
+
+.table_item div:first-child {
+    text-align: start;
+    padding-left: 30px;
+}
+
+.content_product {}
+
+.content_unit_price {}
+
+.content_quantity {}
+
+.content_total {}
+
+.table_footer {
+    margin-top: 20px;
+    font-size: 25px;
+    color: #e5ffb8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.order_title {
+    text-align: center;
+    font-size: 45px;
+    padding: 10px 0;
+    color: rgb(253, 255, 206);
+}
+
+.footer_total_price {
+    padding-right: 7%;
+    position: relative;
+}
+
+.footer_total_price span {
+    display: inline-block;
+
+
+}
+
+.header_order h4 {
+    text-align: center;
+    color: rgb(110, 168, 209);
+    font-weight: 200;
+}
+
+.footer_total_price::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -30px;
+    height: 1px;
+    background-color: rgb(176, 242, 167);
+}
+
+.footer_total_price span:nth-child(2) {
+    transform: translate(50%);
+    color: #bdefaf;
+}
+
+.footer_payment_method {
+    margin-top: 25px;
+    color: #0ba713;
+    font-size: 20px;
+}
+
+.btn_action {
+    width: 50px;
+    flex-shrink: 0;
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+input::-webkit-input-placeholder {
+    color: rgb(104, 161, 133);
+    font-style: italic;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+
+}
+
+
+
+.user_information2 {
+    padding: 30px 20px;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.from_order {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    flex-shrink: 0;
+    font-size: 30px;
+    color: #9da5cc;
+    margin-left: 10%;
+}
+
+.from_order img {
+    width: 100%;
+    border-radius: 50%;
+    padding: 10px 10px 0 10px;
+}
+
+.from_order span:last-child {
+    margin: auto;
+    font-size: 50px;
+    transform: translateY(-50%);
+    background: -webkit-linear-gradient(top right, #4ce15e, #8b9ae7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Brush Script MT', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.to_order {
+    color: #9da5cc;
+    font-size: 30px;
+    margin-left: auto;
+    width: 60%;
+}
+
+.title_to {
+    display: flex;
+    font-size: 25px;
+    color: #82b7c9;
+    position: relative;
+}
+
+.title_to::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0px;
+    height: 1px;
+    background-color: rgb(89, 127, 84);
+}
+
+.title_to span:first-child {
+    flex-shrink: 0;
+    flex-basis: 35%;
+    color: rgb(104, 161, 133);
+}
+
+
+
+
+
+.message_final {
+    line-height: 40px;
+    width: 70%;
+    padding: 45px 70px;
+    color: rgb(109, 227, 247);
+    font-size: 20px;
+    /* From https://css.glass */
+    background: rgba(5, 42, 14, 0.484);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px);
+    border: 1px solid rgba(42, 54, 79, 0.28);
+    margin: 10px auto;
+}
+.message_final p{
+    margin-bottom: 18px;
+    
+}
+
+
+
+
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #68e971;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1c011f;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+input:-webkit-autofill,
+input {
+    border-style: none;
+    background: transparent;
+    outline: none;
+    color: greenyellow;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+.error_message {
+    color: orangered;
+    font-weight: 10;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.order_user_check_button {
+  height: 55px;
+  margin: 30px;
+}
+
+.order_user_check_div {
+    margin: 0 auto;
+}
+
+.order_user_check_div .order_user_check_button:first-child{
+  width: 300px;
+}
+
+.user_order_detail {
+  margin-top: -50px;
+}

@@ -1,0 +1,562 @@
+:root {
+    --height_header: 120px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+
+}
+
+html {
+    background-image: linear-gradient(100deg, rgb(073, 058, 107) 0%, rgb(029, 044, 092) 50%, rgb(041, 037, 071) 100%);
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(to right top, rgb(135, 93, 128), rgb(199, 155, 155), rgb(237, 237, 122)); */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.content {
+    min-height: calc(100vh - var(--height_header));
+}
+
+#header_space {
+    width: 100%;
+    height: var(--height_header);
+}
+
+.navbar {
+    position: relative;
+    height: var(--height_header);
+    display: flex;
+    align-items: stretch;
+    /* justify-content: space-around; */
+    color: rgb(33, 19, 21);
+    /* From https://css.glass */
+    background: rgba(80, 53, 66, 0.404);
+    border-radius: 16px;
+    box-shadow: 5px 10px 10px rgba(39, 17, 17, 0.786);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(9.7px);
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+}
+
+/* Logo */
+.navbar_logo {
+    width: calc(var(--height_header) - 10px);
+    margin-left: 100px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.navbar_logo img {
+    width: 100%;
+    box-shadow: 10px 10px 10px #191818;
+    border-radius: 50%;
+}
+
+.logoText {
+    font-size: 60px;
+    position: absolute;
+    bottom: 0;
+    /* font-family: 'Brush Script MT', cursive; */
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#logoText {
+    background: -webkit-linear-gradient(top right, #4ce15e, #8b9ae7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Brush Script MT', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* MEMPHIS_BACKGROUND_Mesa_de_trabajo_1 */
+
+
+
+
+
+/* right navbar */
+.navbar__right {
+    margin-left: 0;
+    flex-grow: 1;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* action */
+.navbar_actions ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar_actions ul>a {
+    flex-basis: 33%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    color: #5be6ff;
+    background-color: #2c383f;
+    font-size: 20px;
+    font-weight: 300;
+    border: 2px solid rgba(43, 4, 57, 0.039);
+    text-align: center;
+    transition: .3s linear;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 5px 5px 10px#13141a;
+    border-top-left-radius: 20em;
+    /* 50% of height */
+    border-bottom-left-radius: 20em;
+    /* 50% of height */
+    border-top-right-radius: 20em;
+    /* 50% of height */
+    border-bottom-right-radius: 20em;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar_actions ul>a:hover {
+    background-color: rgba(43, 4, 57, 0.792);
+    color: rgb(150, 245, 19);
+    cursor: pointer;
+}
+
+.navbar_actions ul>a>span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-60%);
+}
+
+.navbar_actions ul>a>i {
+    display: block;
+    position: absolute;
+    right: 10px;
+}
+
+/* navbar
+navbar_logo
+navbar_search
+navbar_actions */
+
+.navbar_search {
+    box-shadow: 10px 2px 7px#13141a;
+}
+
+
+
+
+
+
+
+
+
+
+input {
+    border-style: none;
+    background: transparent;
+    outline: none;
+}
+
+button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+
+
+
+
+
+
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5ac;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+            right top,
+            left bottom,
+            color-stop(0.44, rgb(171, 122, 217)),
+            color-stop(0.72, rgb(141, 73, 189)),
+            color-stop(0.86, rgb(148, 28, 112)));
+}
+
+/* -----------------------toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #624545;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(75, 28, 89);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #6a9dd7;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.toggle_status {
+    background-color: #2c3a4587;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 250px;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid rgb(223, 170, 105);
+}
+
+.toggle_status>span {
+    margin: auto 0;
+    padding: 0 10px;
+    font-size: 20px;
+    color: rgb(166, 164, 206);
+
+}
+
+/* -----------------------toggle */
+
+.top_admin_header {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.action_admin_account button {
+    color: rgb(101, 168, 64);
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+
+}
+
+.name_admin {
+    color: rgb(132, 155, 120);
+    border: 1px solid rgb(135, 76, 76);
+    padding: 10px;
+}
+
+.name_admin span {
+    color: rgb(78, 222, 126);
+    font-size: 30px;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+
+
+/* CSS */
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+
+.header_product {
+    font-size: 40px;
+    text-align: center;
+    color: rgb(69, 180, 106);
+    position: relative;
+    padding: 10px;
+}
+
+.header_product::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #13141a;
+}
+
+
+
+.dropdown-check-list {
+    display: inline-block;
+    position: relative;
+
+}
+
+.dropdown-check-list .anchor {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 50px 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.dropdown-check-list .anchor:after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    padding: 5px;
+    right: 10px;
+    top: 20%;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.dropdown-check-list .anchor:active:after {
+    right: 8px;
+    top: 21%;
+}
+
+.dropdown-check-list ul.items {
+    padding: 2px;
+    display: none;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #5be6ff;
+}
+
+.dropdown-check-list ul.items li {
+    list-style: none;
+}
+
+.dropdown-check-list.visible .anchor {
+    color: #0094ff;
+}
+
+.dropdown-check-list.visible .items {
+    display: block;
+}
+
+
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    border-radius: 5px;
+}
+
+.custom-select select {
+    display: none;
+    /*hide original SELECT element: */
+}
+
+.select-selected {
+    /* From https://css.glass */
+    background: rgba(57, 117, 131, 0.19);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(10.6px);
+    text-align: center;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    color: #d0fdb5;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+    text-align: center;
+    border-radius: 5px !important;
+    position: absolute;
+    /* From https://css.glass */
+    background: rgba(63, 28, 58, 0.826);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px) !important;
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(136, 144, 178, 0.06);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    color: rgb(63, 26, 65) !important;
+
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.unavailability{
+    color: rgb(12, 169, 112) !important;
+}
+
+
+input[type="date"] {
+    color:rgb(12, 169, 112);
+}
+
+

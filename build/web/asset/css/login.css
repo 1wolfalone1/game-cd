@@ -1,0 +1,269 @@
+html {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+}
+
+:root {
+    --height_header_: 140px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-clip: border-box;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url(/GameCD/asset/img/1.png)  !important;
+    background-repeat: no-repeat;
+    filter: blur(1.5px) brightness(70%) contrast(90%);
+}
+
+.login_form {
+    width: 45%;
+    margin: 4% auto;
+    padding: 50px 60px 30px;
+    border-radius: 20px;
+    background: rgba(52, 30, 47, 0.883);
+    border-radius: 16px;
+    box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.752);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(42, 50, 79, 0.3);
+}
+
+
+
+.form_login_group{
+    margin: 40px 0;
+
+}
+.form_login_group-title{
+    font-size: 30px;
+    margin-top: 0;
+    padding: 15px;
+}
+.form_login_group-title h1{
+     background: -webkit-linear-gradient(top right, #895ccd, #d5b4ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form_login_group-title h2{
+   background: -webkit-linear-gradient(top right, #baa2de, #a375e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form_login_group-email{
+
+}
+
+.login_input-title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 200;
+    width: 20%;
+    color: #37df43;
+}
+
+input:-webkit-autofill,
+.form_login_group>input{
+    background-color: #474250;
+    padding: 15px;
+    width: 70%;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: 0.2s linear;
+    color:#48ff00;
+}
+
+
+
+
+.form_login_group>input:focus {
+    background-color: #3c4853;
+    box-shadow: 0 0 10px #474250;
+    border-radius: 0;
+
+}
+
+.form_login_group>input::-webkit-input-placeholder {
+    color: rgb(87, 124, 106);
+    font-style: italic;
+}
+.login_email{
+    border-style: none;
+    outline: none;
+}
+.form_login_group-password{
+    position: relative;
+}
+.login_password{
+    border-style: none;
+    outline: none;
+}
+.form_login_group-check{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size:25px;
+}
+
+.form_login_group-check a{
+    color:rgb(157, 129, 155);
+    transition: 0.9 ease-in-out;
+}
+
+.form_login_group-check a:hover {
+    color: rgb(68, 136, 136);
+}
+.form_login_group-check label {
+    color: rgb(123, 173, 218);
+}
+.form_login_group-check label:hover {
+    color: aqua;
+    cursor: pointer;
+}
+.login_checkbox{
+
+}
+.form_login_group-link{
+
+}
+.form_login_group-button{
+    display: flex;
+    justify-content: space-evenly;
+}
+.login_button{
+    font-family: monospace;
+    font-size: 30px;
+}
+.signup_button{
+    font-size: 30px;
+    font-family: monospace;
+}
+
+
+.glow-on-hover {
+    width: 250px;
+    height: 55px;
+    border: none;
+    outline: none;
+    color: #05d0cc;
+    background-color: #11031a;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 60s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #17131fdd;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+        right top,
+        left bottom,
+        color-stop(0.44, rgb(136, 217, 122)),
+        color-stop(0.72, rgb(73, 189, 135)),
+        color-stop(0.86, rgb(28, 148, 112)));
+}
+
+
+
+.error_message {
+    font-size: 20px;
+    position: absolute;
+    bottom: -30px;
+    color: rgb(204, 54, 54);
+    left: 50%;
+    white-space: nowrap;
+    transform: translate(-45%);
+} 
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}

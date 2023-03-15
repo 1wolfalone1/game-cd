@@ -1,0 +1,10 @@
+<decorators defaultdir="/decorators">
+    <decorator name="web" page="web.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    <decorator name="admin" page="admin_game.jsp">
+        <pattern>/views/admin*</pattern>
+        <pattern>/admin*</pattern>
+    </decorator>
+
+</decorators>

@@ -1,0 +1,292 @@
+html {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+}
+
+:root {
+    --height_header_: 140px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+}
+
+html::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-clip: border-box;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url(/GameCD/asset/img/3.png) !important;
+    background-repeat: no-repeat;
+    filter: blur(1.5px) brightness(70%) contrast(100%);
+}
+
+.signup_control {
+    background-color: rgba(43, 4, 57, 0.514);
+}
+
+.signup {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: calc(20px + var(--height_header_));
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 700px;
+    padding: 20px 70px;
+    padding-bottom: 50px;
+    /* From https://css.glass */
+    background: rgba(30, 28, 42, 0.843);
+    border-radius: 16px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.861);
+    backdrop-filter: blur(10.7px);
+    -webkit-backdrop-filter: blur(9.7px);
+    border: 1px solid rgba(58, 84, 85, 0.3);
+    text-align: center;
+    z-index: 0;
+}
+
+
+.signup_heading {
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+
+    /* text gradient */
+   background: -webkit-linear-gradient(top right, #895ccd, #d5b4ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.signup_already {
+    font-size: 19px;
+    color: #39a92a;
+}
+
+.signup_tos {
+    text-decoration: none;
+    font-size: inherit;
+}
+
+
+.form_link {
+    color: #c580de;
+
+}
+
+.form_group {
+    margin: 35px 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.form_tos {
+    font-size: 20px;
+    margin-top: 0;
+    color: #53cb48;
+}
+
+.form_link:hover {
+    color: rgb(116, 69, 135);
+}
+
+
+
+.form_group>span {
+    position: absolute;
+    bottom: -25px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(237, 92, 92, 0.883);
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+-----------------------------
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+} */
+/* -------------------------------------------- */
+
+
+
+input:-webkit-autofill,
+.form_input {
+    font-family: "Poppins", sans-serif;
+    color: rgb(86, 212, 92);
+    padding: 7px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 30px;
+    width: 80%;
+    transition: .3s linear;
+    background-color: rgba(42, 60, 65, 0);
+}
+
+.form_input::-webkit-input-placeholder {
+    color: rgb(104, 161, 133);
+    font-style: italic;
+}
+
+.form_input:focus {
+    box-shadow: 10px 5px 10px rgba(33, 17, 17, 0.632);
+}
+
+/*  */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+
+
+.form_submit {
+    font-family: "Poppins", sans-serif;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 30px;
+    outline: none;
+    cursor: pointer;
+    width: 30%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_submit-text {
+    margin: 0 auto;
+}
+
+#check-tos {
+    width: 20px;
+    height: 20px;
+}
+
+.form_submit-far {
+    margin-top: 50px;
+}
+
+
+.check-tos-text {
+    cursor: pointer;
+}
+
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #1e1b20;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0e0326;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.invalid {
+    box-shadow: 5px 5px 10px rgba(138, 19, 19, 0.803);
+}
+
+
+#signup {
+    background-color: rgba(43, 4, 57, 0.514);
+}
+
+#checkstatus {
+    font-size: 20px;
+    color: red;
+    white-space: nowrap;
+    font-weight: 10;
+}

@@ -1,0 +1,63 @@
+.add_game_button {
+    color: rgb(132, 177, 163);
+    margin: auto 0;
+}
+
+.select_filter_category {
+    height: 50px;
+}
+.select_category{
+    background-color: rgb(70, 90, 90);
+    width: 200px;
+    height: 40px;
+    color:rgb(225, 239, 215);
+    font-size: 20px;
+}
+
+.search_control {
+    margin: 15px 0;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.search_control input{
+    font-size: 20px;
+    border: 1px solid rgb(51, 153, 105);
+    color:rgb(225, 239, 215);
+    padding: 5px;
+    width: 50%;
+}
+
+.filter_game_button {
+    color:rgb(112, 205, 143);
+    margin: 0 auto;
+}
+
+
+.top_search_date{
+    position: relative;
+}
+
+.bot_search_date {
+    position: relative;
+}
+
+.top_search_date::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    background-color: rgb(74, 74, 42);
+    height: 2px;
+}
+
+.bot_search_date::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    background-color: rgb(135, 135, 80);
+    height: 2px;
+}

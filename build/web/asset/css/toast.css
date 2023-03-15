@@ -1,0 +1,133 @@
+
+
+
+.toast {
+    align-items: center;
+    padding: 20x 0;
+    /* From https://css.glass */
+    background: rgba(3, 67, 157, 0.52);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(33, 29, 48, 0.1);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(10.9px);
+    border: 1px solid rgba(123, 238, 201, 0.22);
+    min-width: 400px;
+    max-width: 500px;
+    margin: 10px 0;
+    transition: all 0.5s linear;
+    display: flex;
+ 
+}
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast_icon {
+    font-size: 20px;
+}
+
+.toast_icon,
+.toast_close {
+    padding: 0 16px;
+}
+
+.toast_body {
+    flex: 1;
+}
+
+
+.toast_msg {
+    font-size: 15px;
+    color: rgb(156, 204, 215);
+    padding-bottom: 10px;
+
+}
+
+.toast_close {
+    font-size: 20px;
+    color: #fb417c;
+}
+
+.toast_close:hover {
+    color: #170d0d;
+}
+
+.toast--success .toast_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(85, 222, 108);
+    line-height: 1.5;
+}
+
+.toast--success {
+    border-color: rgb(25, 181, 51);
+}
+
+.toast--success .toast_icon {
+    color: rgb(53, 203, 78);
+}
+
+.toast--reject .toast_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(229, 242, 42);
+    line-height: 1.5;
+}
+
+.toast--reject {
+    border-color: rgb(235, 242, 39);
+}
+
+.toast--reject .toast_icon {
+    color: rgb(208, 243, 34);
+}
+.toast--wrong .toast_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(233, 98, 49);
+    line-height: 1.5;
+}
+
+.toast--wrong {
+    border-color: rgb(242, 75, 15);
+}
+
+.toast--wrong .toast_icon {
+    color: rgb(243, 41, 34);
+}
+#toast {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.btn {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(73, 30, 30);
+    border: 0;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.btn:hover {
+    box-shadow: 0 0 5px #4f3939;
+}
