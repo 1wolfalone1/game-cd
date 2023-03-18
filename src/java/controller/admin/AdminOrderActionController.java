@@ -51,21 +51,23 @@ public class AdminOrderActionController extends HttpServlet {
                 int userId = MyUtils.getInteger(request.getParameter("user_id"));
                 int orderId = MyUtils.getInteger(request.getParameter("order_id"));
                 int status = MyUtils.getInteger(request.getParameter("status"));
+                
                 SearchOrderDTO searchInfo = new SearchOrderDTO(typeSearhDate, from, to, userId, orderId, status);
+                
                 request.getSession().setAttribute("searchInfo", searchInfo);
-                System.out.println(searchInfo + " searhinfo");
             } else if (button.equals("view_all")) {
                 request.getSession().setAttribute("searchInfo", null);
             } else if (button.equals("update")) {
                 int id = MyUtils.getInteger(request.getParameter("id_order"));
                 String shipDate = request.getParameter("order_ship_date");
                 int status = MyUtils.getInteger(request.getParameter("order_status"));
-                System.out.println(status + "-------------------" + request.getParameter("order_status"));
+                
                 ordSer.update(id, shipDate, status);
             } else if (button.equals("view_order_details")) {
                 url = ResourceEnum.ADMIN_ORDER_DETAILS_PAGE.getResource();
                 int id = MyUtils.getInteger(request.getParameter("id_order"));
                 List<OrderDetailModel> listDetails = ordDetailSer.filterByOrderId(id);
+                
                 request.setAttribute("listDetails", listDetails);
             }
             request.getRequestDispatcher(url).forward(request, response);

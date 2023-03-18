@@ -109,11 +109,10 @@ public class AdminUserPaging extends HttpServlet {
             PagingDTO paging = (PagingDTO) ses.getAttribute("pagingUser");
             List<UserModel> list = new ArrayList<>();
             String button = request.getParameter("button");
-            System.out.println(paging + " --------------------------------------------- paging");
+            
             if (paging != null) {
                 int currentPage = paging.getCurrentPage();
                 if (button.equals("0")) {
-                    System.out.println("0 neeeeeeeeee");
                     if (!(currentPage == 1)) {
                         currentPage = currentPage - 1;
                         paging.setCurrentPage(currentPage);
@@ -127,7 +126,6 @@ public class AdminUserPaging extends HttpServlet {
                     currentPage = MyUtils.getInteger(button) == 0 ? currentPage : MyUtils.getInteger(button);
                     paging.setCurrentPage(currentPage);
                 }
-                System.out.println(currentPage  + " ----------------");
                 list = userSer.getPage((currentPage - 1) * SystemConstant.MAX_PAGE_ADMIN_LIST,
                          SystemConstant.MAX_PAGE_ADMIN_LIST);
             }

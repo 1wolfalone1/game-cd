@@ -78,6 +78,7 @@ public class AdminOrderPagingController extends HttpServlet {
                         searchInfo.getFrom(), searchInfo.getTo(),
                         searchInfo.getUserId(), searchInfo.getOrderId(), searchInfo.getStatus());
                 maxSlides = (int) Math.ceil((double) maxItems / SystemConstant.MAX_PAGE_ADMIN_LIST);
+
                 listOrder = listOrder = ordSer.filterByAdminAndPaging(searchInfo.getTypeSearchDate(),
                         searchInfo.getFrom(), searchInfo.getTo(),
                         searchInfo.getUserId(), searchInfo.getOrderId(), searchInfo.getStatus(),
@@ -141,7 +142,9 @@ public class AdminOrderPagingController extends HttpServlet {
                 }
             }
             
-            paging.setPage(true);
+            if (paging != null) {
+                paging.setPage(true);
+            }
             request.setAttribute("listOrder", listOrder);
             ses.setAttribute("paging", paging);
             request.getRequestDispatcher(url).forward(request, response);

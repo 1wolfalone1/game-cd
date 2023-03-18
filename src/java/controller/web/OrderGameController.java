@@ -107,7 +107,7 @@ public class OrderGameController extends HttpServlet {
                 step = processStepOne(request);
             } else if (step == 2) {
                 step = processStepTwo(request, ses);
-                if(step == 0){
+                if (step == 0) {
                     url = ResourceEnum.VIEW_CART.getResource();
                 }
             } else if (step == 3) {
@@ -120,8 +120,9 @@ public class OrderGameController extends HttpServlet {
             request.setAttribute("status", step);
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception e) {
-            response.sendRedirect(ActionEnum.PAGE_NOT_FOUND.getKey());
+
             e.printStackTrace();
+            response.sendRedirect(ActionEnum.PAGE_NOT_FOUND.getKey());
             return;
         }
     }

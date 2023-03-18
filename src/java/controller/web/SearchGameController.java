@@ -140,11 +140,11 @@ public class SearchGameController extends HttpServlet {
                 request.setAttribute("searchCategory", 0);
                 request.setAttribute("searchName", "");
                 request.setAttribute("isPage", true);
-
             } else {
                 listGames = gameSer.filterByGameNameAndCategoryIdAndPaging(searchName, searchCategory,
                         (currentPage - 1) * (SystemConstant.MAX_PAGE_ITEMS), SystemConstant.MAX_PAGE_ITEMS);
-
+                request.setAttribute("searchCategory", searchCategory);
+                request.setAttribute("searchName", searchName);
             }
 
             request.setAttribute("listGames", listGames);

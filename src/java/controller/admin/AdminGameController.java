@@ -58,6 +58,7 @@ public class AdminGameController extends HttpServlet {
                 int categoryIdSearch = MyUtils.getInteger(request.getParameter("categorySearch"));
                 int idSearch = MyUtils.getInteger(request.getParameter("idSearch"));
                 String nameSearch = request.getParameter("nameSearch");
+                
                 request.setAttribute("searchId", idSearch);
                 request.setAttribute("searchName", nameSearch);
                 request.setAttribute("searchCategory", categoryIdSearch);

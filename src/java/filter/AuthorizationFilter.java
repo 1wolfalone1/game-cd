@@ -127,7 +127,10 @@ public class AuthorizationFilter implements Filter {
                 }
                 if(role < resource.getRole()){
                   if(resource.getRole() == 1){
+                      System.out.println(role + "---role" + "------------" + acc);
+                      System.out.println(resource + " ----" + resource.getResource() + "----" + resource.getRole());
                       ((HttpServletResponse)response).sendRedirect(ActionEnum.PAGE_NOT_FOUND.getKey());
+                      return;
                   } else{
                       ses.setAttribute("tmp_message", "Please login to continue!!!");
                       ((HttpServletResponse)response).sendRedirect(ActionEnum.LOGIN_PAGE.getKey());
@@ -135,6 +138,7 @@ public class AuthorizationFilter implements Filter {
                   } 
                 } 
             }
+           
             chain.doFilter(request, response);
         } catch (Throwable t) {
             // If an exception is thrown somewhere down the filter chain,

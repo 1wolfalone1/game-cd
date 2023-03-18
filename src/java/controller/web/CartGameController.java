@@ -85,7 +85,6 @@ public class CartGameController extends HttpServlet {
                 meg.setMegSuccessFul("");
 
             } else if (button.equals("remove")) {
-                System.out.println(game);
                 cart.remove(game);
                 meg.setMegSuccessFul("");
             }
@@ -99,7 +98,7 @@ public class CartGameController extends HttpServlet {
             String megJson = new Gson().toJson(meg);
             out.print(megJson);
             e.printStackTrace();
-            response.sendRedirect(ActionEnum.SOMETHING_WRONG.getKey());
+
         }
     }
 

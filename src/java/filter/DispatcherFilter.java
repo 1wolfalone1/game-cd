@@ -147,6 +147,7 @@ public class DispatcherFilter implements Filter {
                     request.setAttribute("resource", action);
                     RequestDispatcher rd = newRequest.getRequestDispatcher(action.getResource());
                     rd.forward(newRequest, response);
+                    return;
                 } else {
                     ((HttpServletResponse) response).sendRedirect("page-not-found");
                 }

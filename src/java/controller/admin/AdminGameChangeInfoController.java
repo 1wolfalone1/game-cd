@@ -8,6 +8,7 @@ package controller.admin;
 import constant.action.ResourceEnum;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -61,15 +62,19 @@ public class AdminGameChangeInfoController extends HttpServlet {
 //            Change info
             String name = request.getParameter("name");
             String[] listCateChangeString = request.getParameterValues("category");
-            List<Integer> listCateChange = Arrays.asList(listCateChangeString).
-                    stream()
-                    .map(e -> MyUtils.getInteger(e)).collect(Collectors.toList());
+            List<Integer> listCateChange = new ArrayList<>();
+            if (listCateChangeString != null) {
+                listCateChange = Arrays.asList(listCateChangeString).
+                        stream()
+                        .map(e -> MyUtils.getInteger(e)).collect(Collectors.toList());
+            }
+
             int price = MyUtils.getInteger(request.getParameter("price"));
             int quantity = MyUtils.getInteger(request.getParameter("quantity"));
             String description = request.getParameter("description");
-            
+
             gameSer.updateGame(id, name, listCateChange, price, quantity, description);
-            
+
             request.setAttribute("status", "Updated successfully.");
 
             GameModel game = gameSer.getOne(id);

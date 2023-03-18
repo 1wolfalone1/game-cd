@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>List account</title>
         <link rel="stylesheet" href="${css}admin_user_account_list.css" />
 
     </head>
@@ -36,14 +36,14 @@
                     </div>
                     <div class="table_content">
                         <c:if test="${requestScope.find_one != null}">
-                            <c:set var="account" value="${requestScope.account_profile}"/>
-                            <c:if test="${account != null}">
+                            <c:set var="account2" value="${requestScope.account_profileeeeeee}"/>
+                            <c:if test="${account2 != null}">
                                 <form action="admin-user-action">
                                     <div>
-                                        <span>${account.id}</span>
+                                        <span>${account2.id}</span>
                                     </div>
                                     <div>
-                                        <span>${account.user.id}</span>
+                                        <span>${account2.user.id}</span>
                                     </div>
                                     <div>
                                         <button class="button-54 filter_game_button"  name="button" value="find">
@@ -51,16 +51,22 @@
                                         </button>
                                     </div>
                                     <div>
-                                        <span>${account.email}</span>
+                                        <span>${account2.email}</span>
                                     </div>
                                     <div>
-                                        <select name="status_account" style="width: 80%; font-size: 25px !important;">
-                                            <option value="1" ${account.status == 1? 'selected' : ''}>Active</option>
-                                            <option value="0" ${account.status == 0? 'selected' : ''}>Inactive</option>
-                                        </select>
+                                        <c:if test="${account2.role == 1}">
+                                            <span>Active</span>
+                                        </c:if>
+                                        <c:if test="${account2.role != 1}">
+                                            <select name="status_account" style="width: 80%; font-size: 25px !important;">
+                                                <option value="1" ${account2.status == 1? 'selected' : ''}>Active</option>
+                                                <option value="0" ${account2.status == 0? 'selected' : ''}>Inactive</option>
+                                            </select>
+                                        </c:if>
+                                  
                                     </div>
                                     <div>
-                                        <span>${account.role}</span>
+                                        <span>${account2.role}</span>
                                     </div>
                                     <div>
                                         <button class="button-54 filter_game_button"  name="button" value="save_change">
@@ -80,15 +86,15 @@
                         </c:if>
                         <c:if test="${requestScope.listAccounts != null}">
                             <c:set var="list" value="${requestScope.listAccounts}"/>
-                            <c:forEach var="account" items="${list}">
+                            <c:forEach var="account2" items="${list}">
                                 <form action="admin-user-action">
-                                    <input type="hidden" name="account_id" value="${account.id}">
-                                    <input type="hidden" name="user_id" value="${account.user.id}">
+                                    <input type="hidden" name="account_id" value="${account2.id}">
+                                    <input type="hidden" name="user_id" value="${account2.user.id}">
                                     <div>
-                                        <span>${account.id}</span>
+                                        <span>${account2.id}</span>
                                     </div>
                                     <div>
-                                        <span>${account.user.id}</span>
+                                        <span>${account2.user.id}</span>
                                     </div>
                                     <div>
                                         <button class="button-54 filter_game_button" name="button" value="find">
@@ -96,19 +102,24 @@
                                         </button>
                                     </div>
                                     <div>
-                                        <span>${account.email}</span>
+                                        <span>${account2.email}</span>
                                     </div>
                                     <div>
-                                        <select name="status_account" style="width: 80%; font-size: 25px !important;">
-                                            <option value="1" ${account.status == 1? 'selected' : ''}>Active</option>
-                                            <option value="0" ${account.status == 0? 'selected' : ''}>Inactive</option>
-                                        </select>
+                                        <c:if test="${account2.role == 1}">
+                                            <span>Active</span>
+                                        </c:if>
+                                        <c:if test="${account2.role != 1}">
+                                            <select name="status_account" style="width: 80%; font-size: 25px !important;">
+                                                <option value="1" ${account2.status == 1? 'selected' : ''}>Active</option>
+                                                <option value="0" ${account2.status == 0? 'selected' : ''}>Inactive</option>
+                                            </select>
+                                        </c:if>
                                     </div>
                                     <div>
-                                        <c:if test="${account.role != 1}">
+                                        <c:if test="${account2.role != 1}">
                                             <span>USER</span>
                                         </c:if>
-                                        <c:if test="${account.role == 1}">
+                                        <c:if test="${account2.role == 1}">
                                             <span>ADMIN</span>
                                         </c:if>
                                     </div>

@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Order details</title>
         <link rel="stylesheet" href="${css}admin_order_detail.css" />
     </head>
     <body>
@@ -33,7 +33,7 @@
                     </button>
                 </form>
                 <div class="order_content user_order_detail">
-                    <h3 class="order_title">Order #3</h3>
+                    <h3 class="order_title">Order #${order.id}</h3>
                     <div class="user_information2">
                         <div class="from_order">
                             <span>From:</span>

@@ -77,6 +77,7 @@ public class AdminGamePagingController extends HttpServlet {
                 maxItems = gameSer.countGame(name, id, categoryId);
                 maxSlides = (int) Math.ceil((double) maxItems / SystemConstant.MAX_PAGE_ADMIN_LIST);
                 listGames = gameSer.filterGameByAdminAndPaging(name, id, categoryId, (currentPage - 1) * (SystemConstant.MAX_PAGE_ADMIN_LIST), SystemConstant.MAX_PAGE_ADMIN_LIST);
+               
                 request.setAttribute("action_list", "filter");
                 request.setAttribute("searchId", id);
                 request.setAttribute("searchName", name);
@@ -87,6 +88,7 @@ public class AdminGamePagingController extends HttpServlet {
             request.setAttribute("isPage", true);
             request.setAttribute("listGames", listGames);
             request.setAttribute("currentPage", currentPage);
+            
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,6 +125,7 @@ public class AdminGamePagingController extends HttpServlet {
             List<GameModel> listGames = new ArrayList<>();
             String button = request.getParameter("button");
             String isForward = (String) request.getAttribute("forward");
+            
             if (isForward == null) {
                 if (button.equals("0")) {
                     System.out.println("0 neeeeeeeeee");

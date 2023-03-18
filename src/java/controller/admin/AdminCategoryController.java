@@ -58,15 +58,7 @@ public class AdminCategoryController extends HttpServlet {
             request.setAttribute("status_cate", "Action failed!!! Try again.");
             e.printStackTrace();
         } finally {
-            try {
-                List<CategoryModel> listCate = cateSer.getAll();
-                request.setAttribute("listCate", listCate);
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                request.getRequestDispatcher(url).forward(request, response);
-            }
-
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 

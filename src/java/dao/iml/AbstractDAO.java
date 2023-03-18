@@ -31,7 +31,6 @@ public abstract class AbstractDAO<T> {
         PreparedStatement stm = null;
         ResultSet rs = null;
         try {
-            con = DBHelper.makeConnectDB();
             stm = con.prepareStatement(sql);
             setParameter(stm, parameters);
             rs = stm.executeQuery();
@@ -53,7 +52,7 @@ public abstract class AbstractDAO<T> {
         PreparedStatement stm = null;
         try {
 
-            con = DBHelper.makeConnectDB();
+//            con = DBHelper.makeConnectDB();
             stm = con.prepareStatement(sql);
             setParameter(stm, parameters);
             stm.executeUpdate();
@@ -111,7 +110,7 @@ public abstract class AbstractDAO<T> {
         PreparedStatement stm = null;
         ResultSet result = null;
         try {
-            con = DBHelper.makeConnectDB();
+//            con = DBHelper.makeConnectDB();
             con.setAutoCommit(false);
             stm = con.prepareStatement(sql);
             setParameter(stm, parameters);

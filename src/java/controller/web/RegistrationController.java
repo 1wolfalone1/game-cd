@@ -81,6 +81,8 @@ public class RegistrationController extends HttpServlet {
             String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String password = (String) request.getAttribute("password");
+            
+            
             AccountModel acc = new AccountModel();
             acc.setEmail(email);
             acc.setPassword(password);

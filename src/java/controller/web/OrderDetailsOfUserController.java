@@ -72,7 +72,7 @@ public class OrderDetailsOfUserController extends HttpServlet {
 
                 } else {
                     if (acc.getUser().getAddress() == null || acc.getUser().getAddress().trim().isEmpty()) {
-                        System.out.println("sdfasfasdddddddddddddddddd");
+                        
                         url = ResourceEnum.USER_PROFILE_PAGE.getResource();
                         request.setAttribute("updateAddressMeg", "Please update your address to continue!!!");
                     } else {

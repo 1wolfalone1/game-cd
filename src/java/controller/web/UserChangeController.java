@@ -72,11 +72,11 @@ public class UserChangeController extends HttpServlet {
                             accSer.updatePass(acc.getId(), newPass);
                             acc.setPassword(newPass.trim());
                         }
+                        user.updateProfile(acc.getUser().getId(), name, phone, address);
                         acc.getUser().setFullName(name.trim());
                         acc.getUser().setAddress(address.trim());
                         acc.getUser().setPhone(phone.trim());
                         request.setAttribute("statusInfo", "Update successful.");
-
                     } else {
                         UserModel userTmp = new UserModel(0, name.trim(), phone.trim(), address.trim(), null);
                         System.out.println(userTmp);
@@ -137,8 +137,6 @@ public class UserChangeController extends HttpServlet {
                     String ext = originalFileName.substring(index + 1);
                     String fileName = System.currentTimeMillis() + "." + ext;
                     String folder1 = folder + "/" + fileName;
-                    System.out.println(item);
-                    System.out.println(folder2 + "folder2 ne");
                     folder2 = folder2 + "/" + fileName;
                     File file = new File(folder1);
                     File file2 = new File(folder2);

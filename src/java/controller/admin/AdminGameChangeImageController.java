@@ -94,13 +94,16 @@ public class AdminGameChangeImageController extends HttpServlet {
             int id = MyUtils.getInteger(request.getParameter("id_game"));
             String imgPath = request.getParameter("button");
             GameModel game = gameSer.getOne(id);
-            System.out.println(imgPath);
+
             if (game != null) {
                 game.removeImg(imgPath);
                 gameSer.updateImg(id, game.getImgPath());
                 game.setImgPaths(new ArrayList<>());
                 game.setListImg();
             }
+            List<CategoryModel> listCate = cateSer.getAll();
+            request.setAttribute("allCate", listCate);
+            gameSer.setListCate(game);
             request.setAttribute("game", game);
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception e) {
@@ -133,7 +136,9 @@ public class AdminGameChangeImageController extends HttpServlet {
                 game.setImgPaths(new ArrayList<>());
                 game.setListImg();
             }
-
+            List<CategoryModel> listCate = cateSer.getAll();
+            request.setAttribute("allCate", listCate);
+            gameSer.setListCate(game);
             request.setAttribute("game", game);
             request.getRequestDispatcher(url).forward(request, response);
         } catch (Exception e) {
@@ -147,7 +152,7 @@ public class AdminGameChangeImageController extends HttpServlet {
 
     private boolean uploadAvatar(HttpServletRequest request, GameModel game) throws Exception {
         String folder = getServletContext().getRealPath("asset/img/img-product");
-        System.out.println(folder);
+
         int maxFileSize = 50 * 1024 * 1024;
         int maxMemsize = 50 * 1024 * 1024;
         DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -166,7 +171,7 @@ public class AdminGameChangeImageController extends HttpServlet {
             for (FileItem item : items) {
                 if (item.getFieldName().equals("img")) {
                     String originalFileName = item.getName();
-                    System.out.println(originalFileName);
+
                     int index = originalFileName.lastIndexOf(".");
                     String ext = originalFileName.substring(index + 1);
                     String fileName = System.currentTimeMillis() + "." + ext;

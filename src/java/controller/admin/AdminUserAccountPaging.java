@@ -63,30 +63,36 @@ public class AdminUserAccountPaging extends HttpServlet {
         String url = ResourceEnum.ADMIN_ACOUNT_LIST_PAGE.getResource();
         String button = request.getParameter("button");
         try {
-            System.out.println("???????????????????????");
             if (button.equals("find")) {
-                int id = MyUtils.getInteger(request.getParameter("user_id"));
+                int id = MyUtils.getInteger(request.getParameter("acc_id"));
                 AccountModel accout = accSer.getOne(id);
+                
                 request.setAttribute("find_one", "");
-                request.setAttribute("account_profile", accout);
+                request.setAttribute("account_profileeeeeee", accout);
+                
             } else if (button.equals("view_all")) {
                 int status = MyUtils.getInteger(request.getParameter("status"));
 
                 int maxItems = accSer.count(status);
                 int maxSlides = (int) Math.ceil((double) maxItems / SystemConstant.MAX_PAGE_ADMIN_LIST);
                 int currentPage = 1;
+                
                 HttpSession ses = request.getSession();
+                
                 List<AccountModel> listAccounts = accSer.getPage((currentPage - 1) * SystemConstant.MAX_PAGE_ADMIN_LIST,
                         SystemConstant.MAX_PAGE_ADMIN_LIST, status);
+                
                 PagingDTO paging = new PagingDTO(maxItems, maxSlides, currentPage, true);
+                
                 ses.setAttribute("pagingAccount", paging);
                 request.setAttribute("status_search", status);
                 request.setAttribute("listAccounts", listAccounts);
             }
             request.getRequestDispatcher(url).forward(request, response);
+            return;
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect(ActionEnum.SOMETHING_WRONG.getKey());
+//            response.sendRedirect(ActionEnum.SOMETHING_WRONG.getKey());
             return;
         }
     }
@@ -110,9 +116,10 @@ public class AdminUserAccountPaging extends HttpServlet {
             PagingDTO paging = (PagingDTO) ses.getAttribute("pagingAccount");
             List<AccountModel> list = new ArrayList<>();
             String button = request.getParameter("button");
-            System.out.println(paging + " --------------------------------------------- paging");
+            
             if (paging != null) {
                 int currentPage = paging.getCurrentPage();
+                
                 if (button.equals("0")) {
                     if (!(currentPage == 1)) {
                         currentPage = currentPage - 1;
@@ -127,12 +134,13 @@ public class AdminUserAccountPaging extends HttpServlet {
                     currentPage = MyUtils.getInteger(button) == 0 ? currentPage : MyUtils.getInteger(button);
                     paging.setCurrentPage(currentPage);
                 }
-                System.out.println(currentPage + " ----------------");
+                
                 list = accSer.getPage((currentPage - 1) * SystemConstant.MAX_PAGE_ADMIN_LIST,
                         SystemConstant.MAX_PAGE_ADMIN_LIST, status);
             }
 
             paging.setPage(true);
+            
             request.setAttribute("status_search", status);
             request.setAttribute("listAccounts", list);
             ses.setAttribute("pagingAccount", paging);

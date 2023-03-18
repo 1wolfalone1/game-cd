@@ -15,7 +15,7 @@
             <form class="action" action="admin-user-search" method="GET">
                 <div class="search_control">
                     Search by user id:
-                    <input type="text" style="margin-left: auto" name="user_id"/>
+                    <input type="text" style="margin-left: auto" name="user_id" value="${param.user_id}"/>
                 </div>
                 <div style="display: flex; justify-content: center">
                     <button class="button-54 filter_game_button" name="button" value="find">
@@ -32,14 +32,14 @@
             <form class="action" action="admin-account-search" method="GET">
                 <div class="search_control">
                     Search by account id:
-                    <input type="text" style="margin-left: auto" name="user_id"/>
+                    <input type="text" style="margin-left: auto" name="acc_id"  value="${param.acc_id}"/>
                 </div>
                 <div class="search_control" style="margin: 10px; display: flex; justify-content: space-between; align-items: center;">
                     Status:
                     <select name="status" style="padding: 5px; width: 200px;font-size: 20px; background-color: rgba(103, 92, 79, 0.285); color: greenyellow;">
-                        <option value="2" style="background-color: rgba(36, 58, 58, 0.982);">All</option>
-                        <option value="1" style="background-color: rgba(36, 58, 58, 0.982);">Active</option>
-                        <option value="0" style="background-color: rgba(36, 58, 58, 0.982);">Inactive</option>
+                        <option value="2" ${param.status == 2 ? 'selected': ''} style="background-color: rgba(36, 58, 58, 0.982);">All</option>
+                        <option value="1" ${param.status == 1 ? 'selected': ''} style="background-color: rgba(36, 58, 58, 0.982);">Active</option>
+                        <option value="0" ${param.status == 0 ? 'selected': ''} style="background-color: rgba(36, 58, 58, 0.982);">Inactive</option>
                     </select>
                 </div>
                 <div style="display: flex; justify-content: center">

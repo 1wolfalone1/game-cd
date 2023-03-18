@@ -61,9 +61,10 @@ public class GameModel implements Serializable, IModel {
     public void removeImg(String img) {
         this.imgPath = this.imgPath.replace(img, "");
         this.imgPath = this.imgPath.replace("::", ":");
-        if (this.imgPath.charAt(0) == ':') {
+       
+        if (!this.imgPath.isEmpty() && this.imgPath.charAt(0) == ':') {
             this.imgPath = this.imgPath.substring(1, this.imgPath.length());
-        } else if (this.imgPath.charAt(this.imgPath.length() - 1) == ':') {
+        } else if (!this.imgPath.isEmpty() && this.imgPath.charAt(this.imgPath.length() - 1) == ':') {
             this.imgPath = this.imgPath.substring(0, this.imgPath.length() - 1);
         }
     }
